@@ -130,17 +130,20 @@ def getEmp():
 @app.route("/getpayroll", methods=['GET'])
 def getPayroll():
     emp_id = request.form['emp_id']
-    cur = db_conn.cursor()
-    payroll(emp_id)
-
-@app.route("/payroll", methods=['GET'])
-def payroll(emp_id):
-
+    # cur = db_conn.cursor()
+    # payroll(emp_id)
     cur = db_conn.cursor()
     
-    data = cur.execute("SELECT * FROM payroll where emp_id = emp_id")
-    #data = cur.fetchall()
+    select_sql = "SELECT * FROM payroll where emp_id = (%s)"
+    data = cur.execute(select_sql, (emp_id))
     return render_template('PayrollOutput.html', data=data)
+
+# @app.route("/payroll", methods=['GET'])
+# def payroll(emp_id):
+
+    
+#     #data = cur.fetchall()
+    
 
 
 
