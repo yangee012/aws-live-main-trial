@@ -127,7 +127,7 @@ def getEmp():
     data = cur.fetchall()
     return render_template('GetEmpOutput.html', data=data)
 
-@app.route("/getpayroll", methods=['GET'])
+@app.route("/getpayroll", methods=['POST', 'GET'])
 def getPayroll():
     emp_id = request.form['emp_id']
     # cur = db_conn.cursor()
