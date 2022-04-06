@@ -134,7 +134,8 @@ def getPayroll():
     # payroll(emp_id)
     cur = db_conn.cursor()
     
-    select_sql = "SELECT * FROM payroll where emp_id = (%s)"
+    select_sql = "SELECT * FROM payroll"
+    # select_sql = "SELECT * FROM payroll where emp_id = (%s)"
     data = cur.execute(select_sql, (emp_id))
     return render_template('PayrollOutput.html', data=data)
 
