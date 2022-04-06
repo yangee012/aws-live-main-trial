@@ -39,7 +39,7 @@ def toAttend():
     return render_template('Attendance.html')
 
 @app.route("/topayroll", methods=['GET', 'POST'])
-def toAttend():
+def toPayroll():
     return render_template('Payroll.html')
 
 @app.route("/addemp", methods=['POST'])
