@@ -133,11 +133,11 @@ def getPayroll():
     # cur = db_conn.cursor()
     # payroll(emp_id)
     cur = db_conn.cursor()
-    
+
     select_sql = "SELECT * FROM payroll"
     # select_sql = "SELECT * FROM payroll where emp_id = (%s)"
     # data = cur.execute(select_sql, (emp_id))
-
+    cur.execute(select_sql)
     data = cur.fetchall()
     return render_template('PayrollOutput.html', data=data)
 
