@@ -136,7 +136,9 @@ def getPayroll():
     
     select_sql = "SELECT * FROM payroll"
     # select_sql = "SELECT * FROM payroll where emp_id = (%s)"
-    data = cur.execute(select_sql, (emp_id))
+    # data = cur.execute(select_sql, (emp_id))
+
+    data = cur.execute(select_sql)
     return render_template('PayrollOutput.html', data=data)
 
 # @app.route("/payroll", methods=['GET'])
