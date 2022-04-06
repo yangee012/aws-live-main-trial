@@ -128,7 +128,7 @@ def getEmp():
     return render_template('GetEmpOutput.html', data=data)
 
 @app.route("/getpayroll", methods=['GET'])
-def getEmp():
+def getPayRoll():
     cur = db_conn.cursor()
 
     emp_id = request.form['emp_id']
