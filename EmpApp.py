@@ -129,10 +129,8 @@ def getEmp():
 
 @app.route("/getpayroll", methods=['GET'])
 def getPayroll():
-    cur = db_conn.cursor()
-
     emp_id = request.form['emp_id']
-
+    cur = db_conn.cursor()
     payroll(emp_id)
 
 @app.route("/payroll", methods=['GET'])
